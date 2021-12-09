@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learning Flask</title>
+        <!-- In order to import the style.css from the static folder, this is how you can do it.-->
+      
+    </head>
+    <body>
+        <!-- 9. Create a login page and put its corresponding css in style.css, 
+            also don't forget to create a form with input field: email and password-->
+            <h1>This is login</h1>
+
+            <form action="/loginsuccess" method="POST">
+                   
+            
+                <input type="email" id="floatingInput" name="email" placeholder="name@example.com"><br>
+                              
+                <input type="password"  id="floatingPassword" name = "password" placeholder="Password"><br>        
+      
+                <input  type="submit" value="Login">
+                <p >{{ data }}</p>
+                <p ><a href="/">Back to Home</a></p>
+            </form>
+    </body>
+</html>
