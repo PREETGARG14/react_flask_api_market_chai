@@ -1,0 +1,18 @@
+we have to import form in python file in forms.py
+in terminal ->pip3 install -U Flask-WTF or try with pip
+            ->pip3 install wtforms or try with pip
+import in forms.py ->from flask_wtf import FlaskForm
+                     from wtforms import StringField, PasswordField, SubmitField
+
+generating secret key in our app in forms
+i1543@preetgarg:~$ python3
+Python 3.8.10 (default, Sep 28 2021, 16:10:42) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import os
+>>> os.urandom(12).hex()
+'d8c054f87c3a6142b8aea948'
+
+
+
+

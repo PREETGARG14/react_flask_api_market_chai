@@ -1,0 +1,35 @@
+HI Preet
+i1543@preetgarg:~$ cd FlaskMarket/
+i1543@preetgarg:~/FlaskMarket$ pip install email-validator
+Collecting email-validator
+  Downloading email_validator-1.1.3-py2.py3-none-any.whl (18 kB)
+Requirement already satisfied: idna>=2.0.0 in /usr/lib/python3/dist-packages (from email-validator) (2.8)
+Collecting dnspython>=1.15.0
+  Downloading dnspython-2.1.0-py3-none-any.whl (241 kB)
+     |████████████████████████████████| 241 kB 428 kB/s 
+Installing collected packages: dnspython, email-validator
+Successfully installed dnspython-2.1.0 email-validator-1.1.3
+i1543@preetgarg:~/FlaskMarket$ pip install b_crypt
+ERROR: Could not find a version that satisfies the requirement b_crypt (from versions: none)
+ERROR: No matching distribution found for b_crypt
+i1543@preetgarg:~/FlaskMarket$ pip install flask_bcrypt
+Collecting flask_bcrypt
+  Downloading Flask-Bcrypt-0.7.1.tar.gz (5.1 kB)
+Requirement already satisfied: Flask in /usr/lib/python3/dist-packages (from flask_bcrypt) (1.1.1)
+Requirement already satisfied: bcrypt in /usr/lib/python3/dist-packages (from flask_bcrypt) (3.1.7)
+Building wheels for collected packages: flask-bcrypt
+  Building wheel for flask-bcrypt (setup.py) ... done
+  Created wheel for flask-bcrypt: filename=Flask_Bcrypt-0.7.1-py3-none-any.whl size=5010 sha256=878a335d82b5dd3642b9332009ce5b2bdf29ad852727f502028c9bd51b961700
+  Stored in directory: /home/i1543/.cache/pip/wheels/8a/d9/0e/dc762c4ebc76f581397a2e25991db6efd148640b5616ab9210
+Successfully built flask-bcrypt
+Installing collected packages: flask-bcrypt
+Successfully installed flask-bcrypt-0.7.1
+i1543@preetgarg:~/FlaskMarket$ code .
+i1543@preetgarg:~/FlaskMarket$ pip install flask_login
+Collecting flask_login
+  Downloading Flask_Login-0.5.0-py2.py3-none-any.whl (16 kB)
+Requirement already satisfied: Flask in /usr/lib/python3/dist-packages (from flask_login) (1.1.1)
+Installing collected packages: flask-login
+Successfully installed flask-login-0.5.0
+i1543@preetgarg:~/FlaskMarket$ code .
+i1543@preetgarg:~/FlaskMarket$ 
