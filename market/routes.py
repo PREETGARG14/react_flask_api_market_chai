@@ -121,7 +121,8 @@ def admin_login_page():
     if form.validate_on_submit():
         # result = db.session.query(Admins).filter(Admins.email==email, Admins.password==password)
 
-        attempted_user = AdminUser.query.filter_by(username=form.username.data , password_hash = form.password.data)
+        attempted_user = AdminUser.query.filter_by(username=form.username.data , password_hash = form.password.data).first()
+        print(attempted_user)
         if (attempted_user):
         # login_user(attempted_user)
             # flash(f'Success! You are logged in as: {attempted_user.username}(Admin)', category='success')
@@ -137,19 +138,31 @@ def add_product_page():
     products =  db.session.query(Item).filter()
     print(products)
     if form.validate_on_submit():
+        
         product_information = Item(name=form.name.data,
-                              price=form.price.data,
-                              barcode=form.barcode.data,
-                              description = form.description.data)
-        db.session.add(product_information)
-        db.session.commit()
-        # login_user(user_to_create)
-        flash(f"Product {product_information.name} added successfully", category='success')
-        return redirect(url_for('add_product_page' , form=form , products = products))
+                            price=form.price.data,
+                            barcode=form.barcode.data,
+                            description = form.description.data)
+        product_update = db.session.query(Item).filter_by(barcode= product_information.barcode).first()
+        if(product_update):
+            product_update.name = product_information.name
+            product_update.price = product_information.price
+            product_update.barcode = product_information.barcode
+            product_update.description = product_information.description
+            db.session.commit() 
+            print(product_update.name)
+        else:
+            db.session.add(product_information)
+            db.session.commit()
+            # login_user(user_to_create)
+            flash(f"Product {product_information.name} added successfully", category='success')
+            return redirect(url_for('add_product_page' , form=form , products = products))
     if form.errors != {}: #If there are not errors from the validations
         for err_msg in form.errors.values():
             flash(f'There was an error with creating a user: {err_msg}', category='danger')
         
     return render_template('adminpage.html', form=form , products = products)
+
+
 
 

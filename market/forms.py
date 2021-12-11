@@ -38,7 +38,7 @@ class AdminAddProductForm(FlaskForm):
     price = StringField(label='Product Price:', validators=[DataRequired()])
     barcode = StringField(label='Product Barcode:', validators=[DataRequired()])
     description = StringField(label='Product Description:', validators=[DataRequired()])
-    submit = SubmitField(label='Add Products')
+    submit = SubmitField()
 class AdminLoginForm(FlaskForm):
     username = StringField(label='User Name:', validators=[DataRequired()])
     password = PasswordField(label='Password:', validators=[DataRequired()])
