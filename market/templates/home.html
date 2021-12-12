@@ -11,8 +11,11 @@
         </div>
         <div class="product-device box-shadow d-none d-md-block"></div>
         <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+       
     </div>
-    <footer>
-        <a href="{{ url_for('index') }}" class="chatbot">CHatBot</a>
-    </footer>
+    
+    {% include 'includes/chat_bot_modal.html' %}
+    <button class="chatbot" data-toggle="modal"
+                        data-target="#Modal-MoreInfo-chatbot"><i class="far fa-comments"></i>   </button>
+
 {% endblock %}

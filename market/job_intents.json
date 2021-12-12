@@ -2,7 +2,7 @@
     "intents": [
       {"tag": "greeting",
        "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day", "Hey", "Ekse", "Hi"],
-       "responses": ["Hi stranger", "Yebo yes, how can I help", "Ey watsupp", "Ekse Hoezit", "Hola", "Hey dude", "You again"]
+       "responses": ["Hi stranger", "How can I help", "Ey watsupp", "Hola", "Hey dude", "You again"]
       },
       {"tag": "goodbye",
        "patterns": ["Bye", "See you later", "Goodbye", "Ok bye", "Bye Bye"],
@@ -23,6 +23,11 @@
         {"tag": "options",
          "patterns": ["What do you do", "How can you help", "What do you know", "What is your purpose", "How can you help"],
          "responses": ["I can tell you about Chai", "I can give you interesting facts about Chai"]
+        },
+        {
+          "tag":"ChaiFacts",
+          "patterns":["Tell me something about chai" , "What do you know about chai" , "Say something" , "Help me out here" , "Chai?" , "Tell me more"],
+          "responses":["Its proper name is masala chai (originating in India), which means spice blend" , "Masala chai traditionally requires a bit of sweetness","Chai is lower in caffeine than coffee","Spices used in chai have all sorts of health benefits","Masala chai has been the drink of choice in India for centuries"]
         }
     ]
   }
