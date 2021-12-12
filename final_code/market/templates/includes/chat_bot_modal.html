@@ -1,0 +1,87 @@
+<!-- <style>
+    .modal-content {
+      background-color: #212121
+    }
+    .modal-dialog {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10040;
+  border-radius: 10px;
+}
+.modal-body {
+  max-height: 25vh;
+}
+  </style>
+
+<div class="modal fade" id="Modal-MoreInfo-chatbot"
+       tabindex="-1"
+       aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+       
+      <div class="modal-content">
+        <div class="modal-header" style="float: right;">
+            <button type="button" class="btn btn-secondary"
+                  data-dismiss="modal" >x
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <h1>Welcome to Chaibot</h1>
+                <div class="row">
+                    <div class="col">
+                      <p id="response"></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3">
+                      <input class="form-control" type="text" name="question" id="question" style="width:5rem">
+                    </div>
+                    <div class="col-lg-1">
+                      <button class="btn btn btn-outline-light btn-lg px-4" id="submit-button" >Send</button>
+                    </div>
+                  </div>
+                  
+          
+              </div>
+          
+
+              <script>
+          
+          
+                jQuery(document).ready(function() {
+          
+                  $("#submit-button").click(function(e) {
+                    e.preventDefault();
+          
+          
+                    $.ajax({
+                        type: "POST",
+                        url: "/chatbot",
+                        data: {
+                            question: $("#question").val()
+                        },
+                        success: function(result) {
+                          $("#response").append("<br>Me: "+$("#question").val()+ "<br> ChaiBot: "+result.response);
+                          $("#question").val("")
+                        },
+                        error: function(result) {
+                            alert('error');
+                        }
+                    });
+          
+          
+          
+                  });
+          
+                });
+          
+          
+              </script>
+        </div>
+        <div>
+          
+        </div>
+      </div>
+    </div>
+  </div> -->

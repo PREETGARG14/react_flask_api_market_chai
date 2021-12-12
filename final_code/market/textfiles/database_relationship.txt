@@ -1,0 +1,128 @@
+(base) i1543@preetgarg:~/FlaskMarket$ python3
+Python 3.8.8 (default, Apr 13 2021, 19:58:26) 
+[GCC 7.3.0] :: Anaconda, Inc. on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from market.models import db
+>>> db.drop_all()
+>>> db.create_all()
+>>> from market.models import Item,User
+>>> u1=User(username='preet',password_hash='123456',email_address='preet@gmail.com')
+>>> db.session.add(u1)
+>>> db.session.commit()
+>>> User.query.all()
+[<User 1>]
+>>> for user in User.query.filter_by(password_hash='123456'):
+...     user.username
+... 
+'preet'
+>>> item1=Item(name="aalo chai",price=450,barcode='520123454325',description='meethi hai aachi bhi')
+>>> db.session.add(item1)
+>>> db.session.commit()
+>>> item2=Item(name="meethi chai",price=550,barcode='567123454325',description='badiya ek dum')
+>>> db.session.add(item2)
+>>> db.session.commit()
+>>> Item.query.all()
+[Item aalo chai, Item meethi chai]
+>>> i1=Item.query.filter_by(name='allo chai')
+>>> i1
+<flask_sqlalchemy.BaseQuery object at 0x7fd3a15cff70>
+>>> i1.owner
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'BaseQuery' object has no attribute 'owner'
+>>> i1.owner
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'BaseQuery' object has no attribute 'owner'
+>>> i1=Item.query.filter_by(name='allo chai').first()
+>>> i1
+>>> i1
+>>> i1.owner
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'NoneType' object has no attribute 'owner'
+>>> i1
+>>> item1
+Item aalo chai
+>>> item1.owner
+>>> item1.owner=User.query.filter_by(username='preet').first()
+>>> db.session.commit(item1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: commit() takes 1 positional argument but 2 were given
+>>> db.session.add(item1)
+>>> db.session.commit()
+Traceback (most recent call last):
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1770, in _execute_context
+    self.dialect.do_execute(
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'User'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<string>", line 2, in commit
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3262, in flush
+    self._flush(objects)
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3362, in _flush
+    flush_context.execute()
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 455, in execute
+    rec.execute(self)
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 629, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 234, in save_obj
+    _emit_update_statements(
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 998, in _emit_update_statements
+    c = connection._execute_20(
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 329, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1451, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1813, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1994, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1770, in _execute_context
+    self.dialect.do_execute(
+  File "/home/i1543/anaconda3/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'User'
+[SQL: UPDATE item SET owner=%(owner)s WHERE item.id = %(item_id)s]
+[parameters: {'owner': <User 1>, 'item_id': 1}]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+>>> db.session.rollback()
+>>> item1.owner
+>>> i1.owner
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'NoneType' object has no attribute 'owner'
+>>> item1.owner=User.query.filter_by(username='preet').first().id
+>>> db.session.add(item1)
+>>> db.session.commit()
+>>> item1.owner
+1
+>>> i=Item.query.filter_by(name='aalo chai')
+>>> i=Item.query.filter_by(name='aalo chai').first()
+>>> i.owned_user
+<User 1>
+>>> Item.query.all()
+[Item meethi chai, Item aalo chai]
+

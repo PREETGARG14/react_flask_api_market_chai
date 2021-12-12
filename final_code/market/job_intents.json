@@ -1,0 +1,34 @@
+{
+    "intents": [
+      {"tag": "greeting",
+       "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day", "Hey", "Ekse", "Hi"],
+       "responses": ["Hi stranger", "Yebo yes, how can I help", "Ey watsupp", "Ekse Hoezit", "Hola", "Hey dude", "You again"]
+      },
+      {"tag": "goodbye",
+       "patterns": ["Bye", "See you later", "Goodbye", "Ok bye", "Bye Bye"],
+       "responses": ["See you!", "Have a nice day", "Sure Bye", "Later dude", "Sayoonara", "Peace out", "Sure dude", "Ciao"]
+      },
+      {"tag": "thanks",
+       "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+       "responses": ["Happy to help!", "Any time!", "My pleasure", "You are welcome", "Sure dude"]
+      },
+      {"tag": "noanswer",
+       "patterns": [],
+       "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand", "I am still here dude"]
+       },
+       {"tag": "name",
+        "patterns": ["What is your name", "Whats your name", "Tell me your name", "Who are you", "Ungubani", "Tell me about yourself", "You are"],
+        "responses": ["I am ChaiBot", "My name is ChaiBot", "You can call me CB for short", "I am ChaiBot, my friends call me KB", "ChaiBot is my name"]
+        },
+        {"tag": "options",
+         "patterns": ["What do you do", "How can you help", "What do you know", "What is your purpose", "How can you help"],
+         "responses": ["I can tell you about Chai", "I can give you interesting facts about Chai"]
+        },
+        {
+          "tag":"ChaiFacts",
+          "patterns":["Tell me something about chai" , "What do you know about chai" , "Say something" , "Help me out here" , "Chai?" , "Tell me more"],
+          "responses":["Its proper name is masala chai (originating in India), which means spice blend" , "Masala chai traditionally requires a bit of sweetness","Chai is lower in caffeine than coffee","Spices used in chai have all sorts of health benefits","Masala chai has been the drink of choice in India for centuries"]
+        }
+
+    ]
+  }
