@@ -3,14 +3,18 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
+import os
+basedir=os.path.abspath(os.path.dirname(__file__))
+
 
 from keras.models import load_model
-model = load_model('/home/i1543/Downloads/react_flask_api_market_chocolate-chatbot/market/chatbot_model.h5')
+# model = load_model('/home/i1543/Downloads/final_code/market/chatbot_model.h5')
+model = load_model(os.path.join(basedir,"chatbot_model.h5"))
 import json
 import random
-intents = json.loads(open('/home/i1543/Downloads/react_flask_api_market_chocolate-chatbot/market/job_intents.json', encoding='utf-8').read())
-words = pickle.load(open('/home/i1543/Downloads/react_flask_api_market_chocolate-chatbot/market/words.pkl','rb'))
-classes = pickle.load(open('/home/i1543/Downloads/react_flask_api_market_chocolate-chatbot/market/classes.pkl','rb'))
+intents = json.loads(open(os.path.join(basedir,"job_intents.json"), encoding='utf-8').read())
+words = pickle.load(open(os.path.join(basedir,"words.pkl"),'rb'))
+classes = pickle.load(open(os.path.join(basedir,"classes.pkl"),'rb'))
 
 
 def clean_up_sentence(sentence):
