@@ -14,5 +14,32 @@
 13.  open chrome ,your code will run proper
 
 
-  
+
+Home Page:Login Page:
+
+Register Page:
+
+Admin Page:
+
+After Login as User:
+
+Aftet Login as Admin:
+
+Edit Product Details:
+
+Delete A Product:
+
+Market Page:
+
+Buy A Product :
+
+After Bought:
+
+More Info page:
+
+ChaiBot Page:
+
+TRAINED CHAIBOT CHATING WITH ME :
+
+THANK YOU !
   
