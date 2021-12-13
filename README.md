@@ -15,31 +15,47 @@
 
 
 
-Home Page:Login Page:
+Home Page:
+<img src="images/Screenshot from 2021-12-12 20-36-32.png">
+
+Login Page:
+<img src="images/Screenshot from 2021-12-12 20-36-43.png">
 
 Register Page:
+<img src="images/Screenshot from 2021-12-12 20-36-51.png">
 
 Admin Page:
+<img src="images/Screenshot from 2021-12-12 20-37-22.png">
 
 After Login as User:
+<img src="images/Screenshot from 2021-12-12 20-39-24.png">
 
 Aftet Login as Admin:
+<img src="images/Screenshot from 2021-12-12 21-59-36.png">
 
-Edit Product Details:
+Edit Product Details vai Admin:
+<img src="images/Screenshot from 2021-12-12 21-59-43.png">
 
-Delete A Product:
+Delete A Product vai Admin:
+<img src="images/Screenshot from 2021-12-12 21-59-50.png">
 
 Market Page:
+<img src="images/Screenshot from 2021-12-12 20-39-24.png">
 
 Buy A Product :
+<img src="images/Screenshot from 2021-12-12 20-39-29.png">
 
 After Bought:
+<img src="images/Screenshot from 2021-12-12 20-39-40.png">
 
-More Info page:
+More Info page of a Product:
+<img src="images/Screenshot from 2021-12-12 20-39-45.png">
 
 ChaiBot Page:
+<img src="images/Screenshot from 2021-12-12 20-36-32.png">
 
 TRAINED CHAIBOT CHATING WITH ME :
+<img src="images/Screenshot from 2021-12-12 21-58-19.png">
 
 THANK YOU !
   
