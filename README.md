@@ -7,7 +7,7 @@
 6. pip install -r requirements.txt
 7. cd market
 8. inside market there is a file name processor.py => use this file to train this bot
-9. python processor.py
+9. python chatbot.py
 10. now bot is trained , you are  ready to launch
 11. cd ..
 12. python ./run.py
